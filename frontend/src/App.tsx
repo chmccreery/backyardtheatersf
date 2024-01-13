@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { fetchHello } from './api';
+import { fetchHello, fetchWorld } from './api';
 
 function App() {
 
@@ -10,7 +10,8 @@ function App() {
   useEffect(() => {
     async function getStr () {
       const hello = await fetchHello();
-      setMystr(hello);
+      const world = await fetchWorld();
+      setMystr(`${hello}, ${world}!`);
     }
     getStr();
   }, [])
