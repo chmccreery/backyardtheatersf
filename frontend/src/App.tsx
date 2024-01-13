@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { fetchHello } from './api';
 
 function App() {
+
+  const [mystr, setMystr] = useState('');
+
+  useEffect(() => {
+    async function getStr () {
+      const hello = await fetchHello();
+      setMystr(hello);
+    }
+    getStr();
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edit <code>src/App.tsx</code> and save to reload. {mystr}
         </p>
         <a
           className="App-link"

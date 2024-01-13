@@ -1,14 +1,13 @@
 [tool.poetry]
-name = "backend"
+name = "src"
 version = "0.1.0"
 description = ""
 authors = ["Clara McCreery <clara@semgrep.com>"]
-readme = "README.md"
+readme = "../README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
 Flask = "^3.0.0"
-
 
 [build-system]
 requires = ["poetry-core"]

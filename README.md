@@ -17,6 +17,10 @@ cd frontend; npm start;
 
 ## Backend
 
+```
+cd backend;
+```
+
 To add a dependency:
 
 ```
@@ -32,5 +36,5 @@ poetry install
 To run the backend:
 
 ```
-poetry run python main.py
+poetry run python src/main.py
 ```

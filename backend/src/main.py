@@ -1,10 +1,11 @@
 from flask import Flask
+from flask import jsonify
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/api/hello")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return jsonify(mystring = "hello, world")
 
 if __name__ == '__main__':
     app.run(host="localhost", port=5010)
