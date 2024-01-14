@@ -1,16 +1,8 @@
-from flask import Flask
+from src.singletons import app
 from flask import jsonify
-
-app = Flask(__name__)
-
-@app.route("/api/hello")
-def get_hello():
-    return jsonify(mystring = "hello")
-
-
-@app.route("/api/world")
-def get_world():
-    return jsonify(mystring = "world")
+from src.handlers.actor import actor_blueprint
 
 if __name__ == '__main__':
+    app.register_blueprint(actor_blueprint, url_prefix="/actor")
+
     app.run(host="localhost", port=5010)
